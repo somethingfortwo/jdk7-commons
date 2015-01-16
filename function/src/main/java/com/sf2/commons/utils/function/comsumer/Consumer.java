@@ -1,4 +1,4 @@
-package com.sf2.commons.utils.function;
+package com.sf2.commons.utils.function.comsumer;
 
 /**
  * jdk7-commons

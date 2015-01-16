@@ -1,9 +1,9 @@
 package com.sf2.commons.utils;
 
-import com.sf2.commons.utils.function.Consumer;
+import com.sf2.commons.utils.function.comsumer.Consumer;
 import com.sf2.commons.utils.function.Function;
 import com.sf2.commons.utils.function.Predicate;
-import com.sf2.commons.utils.function.Supplier;
+import com.sf2.commons.utils.function.supplier.RefSupplier;
 
 import java.io.Serializable;
 import java.util.NoSuchElementException;
@@ -95,11 +95,11 @@ public final class Optional<T> implements Serializable {
         return this.value != null ? this.value : other;
     }
 
-    public T orElse(Supplier<? extends T> f) {
+    public T orElse(RefSupplier<? extends T> f) {
         return this.value != null ? this.value : f.get();
     }
 
-    public <X extends Throwable> T orElseThrow(Supplier<? extends X> ef) throws X{
+    public <X extends Throwable> T orElseThrow(RefSupplier<? extends X> ef) throws X{
         if (this.value != null) {
             return this.value;
         } else {
